@@ -1,3 +1,5 @@
+'use strict';
+
 console.log('');
 
 // プロトタイプ = オブジェクトのもととなる機能を提供するオブジェクト
@@ -125,5 +127,95 @@ console.log(origin.hoge, deepCopied.hoge);
 // lodash.com
 
 // プロパティの操作
-// TODO: 23.5.29 21:25 ここまで！
-// objectDefineProperty()
+/* objectDefineProperty(obj, prop, desc)
+    obj: 対象のオブジェクト
+    prop: プロパティ名
+    desc: プロパティの詳細情報
+*/
+
+let member = {
+    name: '加藤太郎',
+    age: 19,
+};
+
+// プロパティの変更
+Object.defineProperty(member, 'age', {
+    value: 25,
+    writable: false,
+    configurable: true,
+    enumerable: true,
+});
+
+// プロパティの追加
+Object.defineProperty(member, 'gender', {
+    value: 'male',
+    writable: true,
+    configurable: true,
+    enumerable: true,
+});
+
+for (let prop in member) {
+    console.log(`${prop}: ${member[prop]}`)
+}
+
+// 複数のプロパティを定義する
+/* objectDefineProperties(obj, props)
+    obj: 対象のオブジェクト
+    prop: プロパティ
+*/
+Object.defineProperties(member, {
+    age: {
+        value: 50,
+        writable: false,
+        configurable: true,
+        enumerable: true,
+    },
+    gender: {
+        value: '男性',
+        writable: true,
+        configurable: true,
+        enumerable: true,
+    }
+});
+
+for (let prop in member) {
+    console.log(`${prop}: ${member[prop]}`)
+}
+
+// プロパティの列挙
+for (let prop of Object.keys(obj)) {
+    // プロパティの詳細情報を取得
+    console.log(Object.getOwnPropertyDescriptor(obj, prop));
+}
+
+// 列挙可否問わずの場合は Object.getOWnPropertyNames(obj)
+// for (let prop of Object.getOWnPropertyNames(obj)) {
+
+
+/**
+ * 不変オブジェクト
+ */
+// このコードの一行目にuse strict済
+
+let animal = {
+    type: 'ねこ',
+    name: 'にゃんたろう',
+}
+
+// コメントアウトを調整して動作確認
+
+// 削除・変更=可能、追加=不可
+// Object.preventExtensions(animal);
+
+// 変更=可能、削除・追加=不可
+// Object.seal(animal);
+
+// 削除・変更・追加=不可
+// Object.freeze(animal);
+
+// 以下の変更、削除、追加で制御によってエラーが出る
+animal.name = 'タマ';
+delete animal.type;
+animal.food = '魚';
+console.log(animal);
+
