@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<style>
+    .error {
+        color: red;
+    }
+
+    .v-enter-active {
+        transition: opacity 3s;
+    }
+    .v-enter {
+        opacity: 0;
+    }
+    .v-enter-to {
+        opacity: 1;
+    }
+
+</style>
+
+    <div id="app">
+        <transition appear>
+            <div>{{ message }}</div>
+        </transition>
+        <hr>
+        <input type="number" v-model="number"> = {{ number }}
+        <hr>
+
+        {{ message }}
+        <p :class="error_class">赤文字で警告</p>
+        <hr>
+        <p v-if="out_service">現在は営業時間外です。</p>
+        <ul v-for="i of 10" :key="i">
+            <li>{{ i }}</li>
+        </ul>
+        <hr>
+        <ul v-for="week of weeks" :key="week">
+            <li>{{ week }}</li>
+        </ul>
+
+        <button @click="checkClick" :disabled="clicked">決済ボタン</button>
+
+
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    
+<script>
+
+var today = new Date();
+var hour = today.getHours();
+
+var app = new Vue({
+    el: "#app",
+    data: {
+        message: "Vue.jsの学習しています。",
+        error_class: "error",
+        number: 999,
+        out_service: (hour > 13),
+        weeks: ['日', '月', '火', '水', '木', '金', '土'],
+        clicked: false
+    },
+    methods: {
+        checkClick: function(){
+            this.clicked = true;
+        }
+    }
+
+});
+
+
+</script>
+</body>
+</html>

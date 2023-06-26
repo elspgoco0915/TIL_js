@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<div id="app">
+    <p>{{ number }}</p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            number: 5,
+        },
+        mounted: function() {
+            this.number = this.addzero(this.number)
+        },
+        methods: {
+            addZero: function (value) {
+                if (true) {
+                    return 'test' + value
+                } else {
+                    return value
+                }
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

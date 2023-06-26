@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="text" id="email" name="email">
+    </div>
+    <button id="save">メールアドレスを保存する</button>
+    <button id="save">メールアドレスを保存する</button>
+
+
+<script>
+    const getCookie = (key) => {
+        let cookies = document.cookie.split(';');
+        console.log(cookies);
+        for (let i=0; i < cookies.length; i++) {
+            let k = cookies[i].split('=');
+            if(k[0] == key) {
+                return decodeURIComponent(k[1]);
+            }
+            return '';
+        }
+    }
+
+        document.getElementById('save').addEventListener('click', function(){
+            console.log('test');
+            let email = encodeURIComponent(document.getElementById('email').value);
+            document.cookie = 'email=' + email + '; max-age=3600';
+        }); 
+
+        document.getElementById('email').value = getCookie('email');
+
+</script>
+
+</body>
+</html>
