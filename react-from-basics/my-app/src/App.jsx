@@ -1,14 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ColoredMessage } from "./components/ColoredMessage";
 
 // コンポーネントファイルは.jsxにして区別
 export const App = () => {
+    console.log('rendering!');
 
     // stateの定義
     const [num, setNum] = useState(0);
     const onClickButton = () => {
         setNum(num + 1);
     };
+
+    // useEffect
+    useEffect(() => {
+        alert(num)
+    }, [num]);
+
 
     // css in js
     const contentPinkStyle = {
