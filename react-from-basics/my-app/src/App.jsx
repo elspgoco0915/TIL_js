@@ -1,5 +1,9 @@
+// normal exportをimport
 import { useEffect, useState } from "react";
 import { ColoredMessage } from "./components/ColoredMessage";
+
+// default exportをimport
+import SomeComponent from "./components/SomeComponent";
 
 // コンポーネントファイルは.jsxにして区別
 export const App = () => {
@@ -13,7 +17,8 @@ export const App = () => {
 
     // useEffect
     useEffect(() => {
-        alert(num)
+        // alert(num)
+        console.log(`num is ${num}`);
     }, [num]);
 
 
@@ -30,6 +35,7 @@ export const App = () => {
             <ColoredMessage color="purple">メッセージ</ColoredMessage>
             <p>{num}</p>
             <button onClick={onClickButton}>ボタン</button>
+            <button onClick={SomeComponent}>ボタン2</button>
         </>
     )
 }
