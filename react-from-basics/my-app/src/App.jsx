@@ -10,7 +10,7 @@
  */
 
 
-import { useState, memo } from "react";
+import { useState, memo, useCallback, useMemo } from "react";
 import { Child1 } from "./components/Childs/Child1";
 import { Child4 } from "./components/Childs/Child4";
 
@@ -18,9 +18,16 @@ import { Child4 } from "./components/Childs/Child4";
 export const App = memo(() => {
     console.log("Appレンダリング");
 
-    const onClickReset = () => {
+    // 関数のメモ化
+    const onClickReset = useCallback(() => {
         setNum(0);
-    };
+    }, []);
+
+    // 変数のメモ化(使用していないが参考までに)
+    const sum = useMemo(() => {
+        return 1 + 3;
+    }, []);
+    // console.log(sum);
 
     const [num, setNum] = useState(0);
     const onClickButton = () => {
