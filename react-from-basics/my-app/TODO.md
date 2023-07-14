@@ -1,0 +1,1 @@
+- [ ] ReactDOM.render is no longer supported in React 18 なので代替案調べておく

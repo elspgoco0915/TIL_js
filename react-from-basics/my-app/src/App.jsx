@@ -1,45 +1,27 @@
-/**
- * part6 再レンダリングの仕組みと最適化
- * 再レンダリングの条件
- * ・Stateが更新されたコンポーネント
- * ・Propsが変更されたコンポーネント
- * ・再レンダリングされたコンポーネント配下のコンポーネントすべて
- *
- * メモ化
- *  前回の処理結果を保持しておくこと
- */
+import { useState } from "react";
+import { Card } from "./components/NameEdits/Card";
+// import { Card } from
 
+export const App = () => {
+    // 管理者フラグ
+    const [isAdmin, setIsAdmin] = useState(false);
 
-import { useState, memo, useCallback, useMemo } from "react";
-import { Child1 } from "./components/Childs/Child1";
-import { Child4 } from "./components/Childs/Child4";
-
-// コンポーネントのメモ化
-export const App = memo(() => {
-    console.log("Appレンダリング");
-
-    // 関数のメモ化
-    const onClickReset = useCallback(() => {
-        setNum(0);
-    }, []);
-
-    // 変数のメモ化(使用していないが参考までに)
-    const sum = useMemo(() => {
-        return 1 + 3;
-    }, []);
-    // console.log(sum);
-
-    const [num, setNum] = useState(0);
-    const onClickButton = () => {
-        setNum(num + 1);
-    };
+    // [切り替え]押下時
+    const onClickSwith = () => setIsAdmin(!isAdmin);
 
     return (
-        <>
-            <button onClick={onClickButton}>ボタン</button>
-            <p>{num}</p>
-            <Child1 onClickReset={onClickReset} />
-            <Child4 />
-        </>
-    );
-});
+        <div>
+            {isAdmin
+                ? <span>管理者です</span>
+                : <span>管理者以外です</span>
+            }
+            <button onClick={onClickSwith}>
+                切り替え
+            </button>
+
+            <Card isAdmin={isAdmin} />
+
+        </div>
+    )
+
+};
