@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import { ListItem } from "./components/ListItem";
+import axios from "axios";
 
-function App() {
+// ユーザ情報の型定義
+type User = {
+  id: number,
+  name: string,
+  age: number,
+  personalColor: string,
+};
+
+export const App = () => {
+  // 取得したユーザー情報
+  // const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState<User[]>([]);
+
+  // const jsonUrl: string = "https://example.com/users";
+  // NOTE: npm run json-serverで事前にサーバ立ち上げておく
+  const url: string = "http://localhost:3000/members";
+
+  // 画面表示時にユーザ情報取得
+  useEffect(() => {
+    axios.get<User[]>(url).then((res) => {
+      console.log(res);
+      setUsers(res.data);
+    });
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {users.map(user => (
+        <ListItem id={user.id} name={user.name} age={user.age}
+          personalColor={user.personalColor} />
+      ))}
     </div>
   );
-}
-
-export default App;
+};

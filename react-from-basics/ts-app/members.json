@@ -1,0 +1,32 @@
+{
+  "members": [
+    {
+      "id": 1,
+      "name": "主田",
+      "age": 24,
+      "personalColor": "blue"
+    },
+    {
+      "id": 2,
+      "name": "崎岡",
+      "age": 28,
+      "personalColor": "pink"
+    },
+    {
+      "id": 3,
+      "name": "後藤",
+      "age": 23,
+      "personalColor": "green"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
