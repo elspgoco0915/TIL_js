@@ -1,7 +1,9 @@
 export type User = {
-    id: number,
-    name: string,
-    age: number,
+    id: number;
+    name: string;
+    age: number;
     // 省略可能な型定義
-    personalColor?: string,
+    personalColor?: string;
+    // オプショナルチェーン
+    hobbies?: string[];
 };

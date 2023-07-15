@@ -25,7 +25,8 @@ export const App = () => {
     <div>
       {users.map(user => (
         <ListItem id={user.id} name={user.name} age={user.age}
-        // personalColor={user.personalColor}
+          personalColor={user.personalColor}
+          hobbies={user.hobbies}
         />
       ))}
     </div>
