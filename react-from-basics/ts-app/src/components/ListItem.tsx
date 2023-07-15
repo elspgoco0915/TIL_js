@@ -1,10 +1,4 @@
-// ユーザ情報の型定義
-type User = {
-    id: number,
-    name: string,
-    age: number,
-    personalColor: string,
-};
+import type { User } from "../types/user";
 
 export const ListItem = (props: User) => {
     const { id, name, age, personalColor } = props;
