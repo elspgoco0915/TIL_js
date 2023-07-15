@@ -2,5 +2,6 @@ export type User = {
     id: number,
     name: string,
     age: number,
-    personalColor: string,
+    // 省略可能な型定義
+    personalColor?: string,
 };
