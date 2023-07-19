@@ -1,27 +1,44 @@
 import { useState } from "react";
-import { Card } from "./components/NameEdits/Card";
-// import { Card } from
+import axios from "axios";
 
 export const App = () => {
-    // 管理者フラグ
-    const [isAdmin, setIsAdmin] = useState(false);
+    const [userList, setUserList] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
+    const [isError, setIsError] = useState(false);
 
-    // [切り替え]押下時
-    const onClickSwith = () => setIsAdmin(!isAdmin);
+    // ユーザー取得ボタン押下アクション
+    const onClickFetchUser = () => {
+        setIsLoading(true);
+        setIsError(false);
+        // API実行
+        axios.get("https://example.com/users")
+            .then(result => {
+                const users = result.data.map(user => ({
+                    id: user.id,
+                    name: `${user.lastname} ${user.firstname}`,
+                    age: user.age
+                }));
+                // ユーザー一覧stateを更新
+                setUserList(users);
+                // エラーの場合はフラグon
+            }).catch(() => setIsError(true))
+            // 処理完了後ローディングフラグoff
+            .finally(() => setIsLoading(false));
+    };
 
     return (
         <div>
-            {isAdmin
-                ? <span>管理者です</span>
-                : <span>管理者以外です</span>
-            }
-            <button onClick={onClickSwith}>
-                切り替え
-            </button>
-
-            <Card isAdmin={isAdmin} />
-
+            <button onClick={onClickFetchUser}>ユーザー取得</button>
+            {/* エラーの場合はエラーメッセージを表示 */}
+            {isError && <p style={{ color: "red" }}>エラーが発生</p>}
+            {/* ローディング中は表示を切り替える */}
+            {isLoading ? (<p>データ取得中です</p>)
+                : (userList.map(user =>
+                (<p key={user.id}>
+                    {`${user.id}: ${user.name} ${user.age}歳`}
+                </p>
+                ))
+                )}
         </div>
     )
-
 };
