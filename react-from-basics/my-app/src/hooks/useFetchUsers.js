@@ -17,6 +17,7 @@ export const useFetchUsers = () => {
         setIsLoading(true);
         setIsError(false);
         // API実行
+        // TODO: json-serverを用いてaxiosできるようにする
         axios.get("https://example.com/users")
             .then(result => {
                 const users = result.data.map(user => ({
