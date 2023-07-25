@@ -1,0 +1,123 @@
+/* TODO: css ソートする */
+
+button {
+  border-radius: 1em;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.containedButton {
+  color: #fff;
+}
+
+.outlinedButton {
+  background-color: #fff;
+}
+
+.containedButton:hover {
+  opacity: 0.8;
+}
+
+.outlinedButton:hover {
+  transition:
+    background-color 300ms ease-in-out,
+    color 300ms ease-in-out;
+}
+
+.outlinedButton.default:hover {
+  color: #fff;
+  background-color: #6c757d;
+}
+
+.outlinedButton.primary:hover {
+  color: #fff;
+  background-color: #007bff;
+}
+
+.outlinedButton.danger:hover {
+  color: #fff;
+  background-color: #dc3545;
+}
+
+button:disabled {
+  opacity: 0.5;
+}
+
+/* TODO: hoverしたときにフォントの色が変わってしまう */
+.outlinedButton:disabled {
+  color: #6c757d;
+  transition: unset;
+}
+
+.outlinedButton:hover:disabled {
+  background-color: #fff;
+  transition: unset;
+}
+
+.outlinedButton.danger {
+  background-color: #fff;
+  color: #dc3545;
+  border: 1px solid #dc3545;
+}
+
+.outlinedButton.default {
+  background-color: #fff;
+  color: #6c757d;
+  border: 1px solid #6c757d;
+}
+
+.outlinedButton.primary {
+  background-color: #fff;
+  color: #007bff;
+  border: 1px solid #007bff;
+}
+
+.containedButton.default {
+  background-color: #6c757d;
+  border: 1px solid #6c757d;
+}
+
+.containedButton.primary {
+  background-color: #007bff;
+  border: 1px solid #007bff;
+}
+
+.containedButton.danger {
+  background-color: #dc3545;
+  border: 1px solid #dc3545;
+}
+
+.small {
+  font-size: 12px;
+  padding: 8px;
+}
+
+.large {
+  font-size: 18px;
+  padding: 14px;
+}
+
+/* クリック時の波紋風アニメーション */
+.ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: radial-gradient(circle, #fff 10%, transparent 10%) no-repeat 50%;
+  transform: scale(10, 10);
+  opacity: 0;
+  transition: transform 0.3s, opacity 1s;
+}
+
+.ripple:active::after {
+  transform: scale(0, 0);
+  transition: 0s;
+  opacity: 0.3;
+}
