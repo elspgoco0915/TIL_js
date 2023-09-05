@@ -54,26 +54,19 @@ const BodyCard = (props) => {
       <CardMedia style={{ height: "150px" }} image={imageUrl} />
 
       <StyledCardContent>
-        <Typography variant="body2" component="p">
-          {body}
-        </Typography>
         <TitleTypography color="textSecondary" gutterBottom>
-          Word of the Day
+          {title}
         </TitleTypography>
-        <Typography variant="h5" component="h2">
-          be{bull}nev{bull}o
-        </Typography>
-        <PositionedTypography color="textSecondary">
-          adjective
+        <PositionedTypography variant="body2" component="p">
+          {body}
         </PositionedTypography>
-        <Typography variant="body2" component="p">
-          well meaning and kindly.
-          <br />
-          {'"a benevolent smile"'}
-        </Typography>
+        <PositionedTypography variant="h5" component="h2">
+          test1{bull}test2{bull}test3
+        </PositionedTypography>
       </StyledCardContent>
       <CardActions>
-        <Button size="small">詳細を見る</Button>
+        <Button size="small" href={`/post/${id}`}>詳細をみる</Button>
+        {/*<Button size="small">詳細を見る</Button>*/}
       </CardActions>
     </Card>
   );
