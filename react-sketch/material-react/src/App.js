@@ -10,7 +10,6 @@ import { Routes, Route, BrowserRouter } from 'react-router-dom';
 function App() {
   return (
     <>
-      {/*<BodyCard />*/}
       <Grid container direction="column">
         <Grid item>
           <Header />
@@ -18,17 +17,6 @@ function App() {
         <Grid item container>
           <Grid sm={2} />
             <Grid xs={12} sm={8}>
-              {/*<Router>*/}
-              {/*  <Switch>*/}
-              {/*    <Route exact path="/">*/}
-              {/*      <Content />*/}
-              {/*    </Route>*/}
-              {/*    <Route path="/about">*/}
-              {/*      <About />*/}
-              {/*    </Route>*/}
-              {/*  </Switch>*/}
-              {/*</Router>*/}
-
               <BrowserRouter>
                 <Routes>
                   <Route exact path="/" element={<Content />}/>
@@ -36,9 +24,6 @@ function App() {
                   <Route exact path="/post/:id" element={<PostContent />}/>
                 </Routes>
               </BrowserRouter>
-
-
-              {/*<Content />*/}
           </Grid>
           <Grid sm={2} />
         </Grid>
