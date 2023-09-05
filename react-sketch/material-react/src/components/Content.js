@@ -1,45 +1,32 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
+import axios from 'axios';
 import Grid from '@mui/material/Grid';
 import BodyCard from './BodyCard';
 
-const cardContents = [
-  {
-    title: "タイトル",
-    subheader: "ヘッダー",
-    avatarUrl: "https://picsum.photos/50",
-    imageUrl: "https://picsum.photos/150",
-    text: "本文本文本文本文本文本文本文本文",
-  },
-  {
-    title: "タイトル2",
-    subheader: "サブヘッダー2",
-    avatarUrl: "https://picsum.photos/50",
-    imageUrl: "https://picsum.photos/150",
-    text: "testtesttesttesttesttesttesttest",
-  },
-  {
-    title: "タイトル3",
-    subheader: "サブヘッダー3",
-    avatarUrl: "https://picsum.photos/50",
-    imageUrl: "https://picsum.photos/150",
-    text: "title3title3title3title3title3",
-  },
-  {
-    title: "タイトル4",
-    subheader: "サブヘッダー4",
-    avatarUrl: "https://picsum.photos/50",
-    imageUrl: "https://picsum.photos/150",
-    text: "12345123451234512345123451234512345",
-  },
-];
-
 const Content = () => {
+
+  const cardContent = {
+    avatarUrl: "https://picsum.photos/50",
+    imageUrl: "https://picsum.photos/150",
+  };
+
+  // APIレスポンス結果を格納する変数
+  const [posts, setPosts] = useState([]);
+  // ページを開いたときにaxiosでAPIへリクエストし、レスポンスを格納
+  useEffect(() => {
+    axios.get('https://jsonplaceholder.typicode.com/posts')
+      .then(res => {
+        setPosts(res.data)
+      })
+  }, []);
+
 
   // コンポーネントのpropsにcardContentsを展開する関数
   const getCardContent = getObj => {
+    const bodyCardContent = {...getObj, ...cardContent}
      return (
-       <Grid item xs={12} sm={4}>
-         <BodyCard {...getObj} />
+       <Grid item xs={12} sm={4} key={getObj.id}>
+         <BodyCard {...bodyCardContent} />
        </Grid>
      );
   };
@@ -47,33 +34,9 @@ const Content = () => {
   // cardContentsの数だけ出力する
   return (
     <Grid container spacing={2}>
-      {cardContents.map(contentObj => getCardContent(contentObj))}
+      {posts.map(contentObj => getCardContent(contentObj))}
     </Grid>
   )
 }
-
-
-
-// function Content() {
-//   return (
-//     <Grid container spacing={2}>
-//       <Grid item xs={12} sm={4}>
-//         <BodyCard
-//           title="タイトル"
-//           subheader="ヘッダー"
-//           avatarUrl="https://picsum.photos/50"
-//           imageUrl="https://picsum.photos/150"
-//           text="本文本文本文本文本文本文本文本文"
-//         />
-//       </Grid>
-//       <Grid item xs={12} sm={4}>
-//         <BodyCard />
-//       </Grid>
-//       <Grid item xs={12} sm={4}>
-//         <BodyCard />
-//       </Grid>
-//     </Grid>
-//   )
-// }
 
 export default Content

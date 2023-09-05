@@ -8,12 +8,9 @@ const StyledTypography = styled(Typography)(({ theme }) => ({
 }));
 
 const Header = () => {
-  // const classes = useStyles();
-
   return (
     <AppBar position="static">
       <Toolbar>
-        {/*<Typography className={classes.typographyStyles}>*/}
         <StyledTypography>
           ヘッダー
         </StyledTypography>

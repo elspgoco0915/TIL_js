@@ -1,11 +1,10 @@
 import React from "react";
 import { styled } from "@mui/material/styles";
 import { Avatar, Card, CardHeader, CardMedia, CardActions, CardContent, Button, IconButton, Typography } from '@mui/material';
-import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import StarIcon from '@mui/icons-material/Star';
 
 const BodyCard = (props) => {
-  const { avatarUrl, title, subheader, text, imageUrl } = props;
+  const { userId, id, title, body, avatarUrl, imageUrl } = props;
 
   // styledComponents
   const StyledBull = styled('span')({
@@ -21,10 +20,26 @@ const BodyCard = (props) => {
     marginBottom: 14,
   });
 
+  // cardの高さを統一する
+  const StyledCardHeader = styled(CardHeader)({
+    height: '50px',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap',
+    "& .MuiCardHeader-content": {
+      overflow: 'hidden'
+    },
+  });
+  const StyledCardContent = styled(CardContent)({
+    height: '200px',
+    overflow: 'hidden'
+  });
+
+
   // ReturnedComponents
   return (
     <Card variant="outlined">
-      <CardHeader
+      <StyledCardHeader
         avatar={
           <Avatar src={avatarUrl} />
         }
@@ -34,14 +49,13 @@ const BodyCard = (props) => {
           </IconButton>
         }
         title={title}
-        subheader={subheader}
       />
 
       <CardMedia style={{ height: "150px" }} image={imageUrl} />
 
-      <CardContent>
+      <StyledCardContent>
         <Typography variant="body2" component="p">
-          {text}
+          {body}
         </Typography>
         <TitleTypography color="textSecondary" gutterBottom>
           Word of the Day
@@ -57,7 +71,7 @@ const BodyCard = (props) => {
           <br />
           {'"a benevolent smile"'}
         </Typography>
-      </CardContent>
+      </StyledCardContent>
       <CardActions>
         <Button size="small">詳細を見る</Button>
       </CardActions>
