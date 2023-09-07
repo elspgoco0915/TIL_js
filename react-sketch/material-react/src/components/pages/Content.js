@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from "react";
 import axios from 'axios';
 import Grid from '@mui/material/Grid';
-import BodyCard from './BodyCard';
+import BodyCard from 'components/BodyCard';
+import ContentTemplate from "components/pages/ContentTemplate";
 
 const Content = () => {
 
@@ -33,9 +34,11 @@ const Content = () => {
 
   // cardContentsの数だけ出力する
   return (
-    <Grid container spacing={2}>
-      {posts.map(contentObj => getCardContent(contentObj))}
-    </Grid>
+    <ContentTemplate>
+      <Grid container spacing={2}>
+        {posts.map(contentObj => getCardContent(contentObj))}
+      </Grid>
+    </ContentTemplate>
   )
 }
 
