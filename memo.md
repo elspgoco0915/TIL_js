@@ -1,3 +1,26 @@
+# 目指すべきベストプラクティス
+
+- 構成関連
+  - StoryBook + Hygen
+    - (index(presenter/containerファイル), stories, componentファイル )
+- AtomicDesginの場合
+  - UI/ロジックの切り分け(presenter / container), Styledを使う
+- 脱AtomicDesignの場合
+  - UIpartsのパターン(bulletproof)
+- MUI
+  - レイアウト学習のためにTemplatesの写経
+  - AtomicDesign + MUIのベストプラクティス
+- 基礎理解
+  - hooks集で抑える
+  - Reactチュートリアル
+  - りあくとで原理・原則の座学
+- そのほか
+  - 絶対パス
+
+- ゆくゆくは抑えたい
+  - Jest
+---
+
 # 参考になりそうなサイト
 
 ## React, JS の基本的なところ
