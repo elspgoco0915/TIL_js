@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import Grid from '@mui/material/Grid';
 import BodyCard from 'components/BodyCard';
@@ -24,12 +24,12 @@ const Content = () => {
 
   // コンポーネントのpropsにcardContentsを展開する関数
   const getCardContent = getObj => {
-    const bodyCardContent = {...getObj, ...cardContent}
-     return (
-       <Grid item xs={12} sm={4} key={getObj.id}>
-         <BodyCard {...bodyCardContent} />
-       </Grid>
-     );
+    const bodyCardContent = { ...getObj, ...cardContent }
+    return (
+      <Grid item xs={12} sm={4} key={getObj.id}>
+        <BodyCard {...bodyCardContent} />
+      </Grid>
+    );
   };
 
   // cardContentsの数だけ出力する
