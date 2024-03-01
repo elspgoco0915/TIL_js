@@ -4,6 +4,8 @@ import Home from './pages/home';
 import About from './pages/about';
 import Contact from './pages/contact';
 import NoMatch from './pages/nomatch';
+import Posts from './pages/posts';
+import Post from './pages/post';
 import { Routes, Route, Link, NavLink, useResolvedPath, useMatch } from 'react-router-dom';
 
 function CustomLink({ children, to, ...props }) {
@@ -47,11 +49,17 @@ function App() {
         <li>
           <CustomLink to="/contact">Contact</CustomLink>
         </li>
+        <li>
+          <Link to="/posts">Posts</Link>
+        </li>
       </ul>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact message="Hello Contact" />} />
+        <Route path="/posts" element={<Posts />}>
+          <Route path="post" element={<Post />} />
+        </Route>
         <Route path="*" element={<NoMatch />}/>
       </Routes>
     </div>
