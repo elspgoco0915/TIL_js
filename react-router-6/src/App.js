@@ -4,7 +4,22 @@ import Home from './pages/home';
 import About from './pages/about';
 import Contact from './pages/contact';
 import NoMatch from './pages/nomatch';
-import { Routes, Route, Link, NavLink } from 'react-router-dom';
+import { Routes, Route, Link, NavLink, useResolvedPath, useMatch } from 'react-router-dom';
+
+function CustomLink({ children, to, ...props }) {
+  let resolved = useResolvedPath(to);
+  let match = useMatch({
+    path: resolved.pathname,
+    end: true,
+  });
+  return (
+    <div>
+      <Link style={{ color: match ? 'blue' : '' }} to={to} {...props}>
+        {children}
+      </Link>
+    </div>
+  );
+}
 
 function App() {
   return (
@@ -30,7 +45,7 @@ function App() {
           </NavLink>
         </li>
         <li>
-          <Link to="/contact">Contact</Link>
+          <CustomLink to="/contact">Contact</CustomLink>
         </li>
       </ul>
       <Routes>
