@@ -6,6 +6,7 @@ import Contact from './pages/contact';
 import NoMatch from './pages/nomatch';
 import Posts from './pages/posts';
 import Post from './pages/post';
+import PostIndex from './pages/postindex';
 import { Routes, Route, Link, NavLink, useResolvedPath, useMatch } from 'react-router-dom';
 
 function CustomLink({ children, to, ...props }) {
@@ -58,6 +59,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact message="Hello Contact" />} />
         <Route path="/posts" element={<Posts />}>
+          <Route index element={<PostIndex />} />
           <Route path=":postId" element={<Post />} />
         </Route>
         <Route path="*" element={<NoMatch />}/>
