@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Home from './pages/home';
 import About from './pages/about';
@@ -7,7 +6,7 @@ import NoMatch from './pages/nomatch';
 import Posts from './pages/posts';
 import Post from './pages/post';
 import PostIndex from './pages/postindex';
-import { Routes, Route, Link, NavLink, useResolvedPath, useMatch } from 'react-router-dom';
+import { Routes, Route, Link, NavLink, useResolvedPath, useMatch, Outlet } from 'react-router-dom';
 
 const Layout = ({ children }) => {
   return (
@@ -16,6 +15,14 @@ const Layout = ({ children }) => {
     </div>
   )
 };
+
+const NestedLayout = () => {
+  return (
+    <div style={{ display: 'flex', justifyContent: 'end'}}>
+      <Outlet />
+    </div>
+  )
+}
 
 function CustomLink({ children, to, ...props }) {
   let resolved = useResolvedPath(to);
@@ -63,9 +70,13 @@ function App() {
         </li>
       </ul>
       <Routes>
+        {/* Layoutの書き方 */}
         <Route path="/" element={<Layout><Home /></Layout>} />
+        {/* Layoutの書き方2 */}
         <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact message="Hello Contact" />} />
+        <Route element={<NestedLayout />}>
+          <Route path="/contact" element={<Contact message="Hello Contact" />} />
+        </Route>
         <Route path="/posts" element={<Posts />}>
           <Route index element={<PostIndex />} />
           <Route path=":postId" element={<Post />} />
