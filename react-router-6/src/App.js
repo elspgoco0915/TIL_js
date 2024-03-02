@@ -9,6 +9,14 @@ import Post from './pages/post';
 import PostIndex from './pages/postindex';
 import { Routes, Route, Link, NavLink, useResolvedPath, useMatch } from 'react-router-dom';
 
+const Layout = ({ children }) => {
+  return (
+    <div style={{ display: 'flex', justifyContent: 'center'}}>
+      {children}
+    </div>
+  )
+};
+
 function CustomLink({ children, to, ...props }) {
   let resolved = useResolvedPath(to);
   let match = useMatch({
@@ -55,7 +63,7 @@ function App() {
         </li>
       </ul>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Layout><Home /></Layout>} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact message="Hello Contact" />} />
         <Route path="/posts" element={<Posts />}>
