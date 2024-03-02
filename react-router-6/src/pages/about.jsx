@@ -5,7 +5,7 @@ function About () {
   return (
     <>
       <h2>About</h2>
-      <button onClick={() => navigate('/contact')}>To Contact</button>
+      <button onClick={() => navigate('/contact?api_key=search', { state: 'test' })}>To Contact</button>
     </>
   );
 }

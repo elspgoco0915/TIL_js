@@ -63,7 +63,15 @@ function App() {
           </NavLink>
         </li>
         <li>
-          <CustomLink to="/contact">Contact</CustomLink>
+          <CustomLink 
+            to={{
+              pathname: '/contact',
+              search: '?api_key=abc123',
+              state: 'test',
+            }}
+          >
+            Contact
+          </CustomLink>
         </li>
         <li>
           <Link to="/posts">Posts</Link>
