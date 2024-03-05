@@ -1,4 +1,6 @@
 import { Routes, Route, NavLink } from 'react-router-dom';
+import QuickStart from './pages/quickstart';
+import NotFound from './pages/notfound';
 
 const App = () => {
   return (
@@ -21,7 +23,17 @@ const Router = () => {
           Home
         </NavLink>
       </li>
+      <li>
+        <NavLink to="/quickstart">
+          QuickStart
+        </NavLink>
+      </li>
     </ul>
+    <Routes>
+      <Route path="/" />
+      <Route path="/quickstart" element={<QuickStart />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   </>
   );
 }
