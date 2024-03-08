@@ -2,12 +2,27 @@ import './../styles/quickstart.css';
 import { useState } from 'react';
 
 const QuickStart = () => {
+
+  // コンポーネント間でデータを共有する(stateのリフトアップ) 
+  const [sharedCount, setSharedCount] = useState(0);
+  const handleClick = () => {
+    setSharedCount(sharedCount + 1);
+  };
+
   return (
     <div>
       <h1>QuickStart</h1>
+
+      <h2>Button</h2>
+      <h3>components</h3>
       <MyButton />
       <MyButton />
+      <h3>sharedCount</h3>
+      <SharedCountButton count={sharedCount} onClick={handleClick} />
+      <SharedCountButton count={sharedCount} onClick={handleClick} />
+      <h2>Profile</h2>
       <Profile />
+      <h2>ShoppingList</h2>
       <ShoppingList />
     </div>
   );
@@ -23,6 +38,15 @@ const MyButton = () => {
 
   return (
     <button onClick={handleClick}>
+      Clicked {count} Times
+    </button>
+  );
+}
+
+// コンポーネント間でデータを共有する 
+const SharedCountButton = ({count, onClick}) => {
+  return (
+    <button onClick={onClick}>
       Clicked {count} Times
     </button>
   );
