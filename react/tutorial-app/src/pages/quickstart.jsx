@@ -1,3 +1,5 @@
+import './../styles/quickstart.css';
+
 const QuickStart = () => {
   return (
     <div>
@@ -24,8 +26,10 @@ const Profile = () => {
   return (
     <>
       <h1>{user.name}</h1>
-      {/* https://ja.react.dev/learn#writing-markup-with-jsx */}
-      <img src={user.imageUrl} alt="" />
+      <img 
+        src={user.imageUrl} 
+        className="avatar" 
+      />
     </>
   );
 }
