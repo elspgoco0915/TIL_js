@@ -1,9 +1,11 @@
 import './../styles/quickstart.css';
+import { useState } from 'react';
 
 const QuickStart = () => {
   return (
     <div>
       <h1>QuickStart</h1>
+      <MyButton />
       <MyButton />
       <Profile />
       <ShoppingList />
@@ -12,9 +14,17 @@ const QuickStart = () => {
 }
 
 // コンポーネントの作成
+// イベントに応答する
 const MyButton = () => {
+  const [count, setCount] = useState(0);
+  const handleClick = () => {
+    setCount(count + 1);
+  }
+
   return (
-    <button>I'm a Button</button>
+    <button onClick={handleClick}>
+      Clicked {count} Times
+    </button>
   );
 }
 
