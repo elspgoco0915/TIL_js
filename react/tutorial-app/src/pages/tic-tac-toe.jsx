@@ -78,8 +78,6 @@ const Game = () => {
   );
 }
 
-export default Game;
-
 const calculateWinner = (squares) => {
   const lines = [
     [0, 1, 2],
@@ -104,3 +102,5 @@ const calculateWinner = (squares) => {
   }
   return null;
 }
+
+export default Game;
