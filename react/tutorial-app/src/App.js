@@ -1,6 +1,7 @@
 import { Routes, Route, NavLink } from 'react-router-dom';
 import QuickStart from './pages/quickstart';
 import NotFound from './pages/notfound';
+import TicTacToe from './pages/tic-tac-toe';
 
 const App = () => {
   return (
@@ -28,10 +29,16 @@ const Router = () => {
           QuickStart
         </NavLink>
       </li>
+      <li>
+        <NavLink to="/tic-tac-toe">
+          Tic-Tac-Toe
+        </NavLink>
+      </li>
     </ul>
     <Routes>
       <Route path="/" />
       <Route path="/quickstart" element={<QuickStart />} />
+      <Route path="/tic-tac-toe" element={<TicTacToe/>} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   </>
