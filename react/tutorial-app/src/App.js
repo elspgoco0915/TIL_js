@@ -10,6 +10,7 @@ const App = () => {
       <h1>tutorial-app</h1>
       <p>react.dev</p>
       <a href="https://ja.react.dev/learn">https://ja.react.dev/learn</a>
+      <hr />
       <Router />
     </>
   );
@@ -41,12 +42,13 @@ const Router = () => {
         </NavLink>
       </li>
     </ul>
+    <hr />
     <Routes>
       <Route path="/" />
       <Route path="/quickstart" element={<QuickStart />} />
       <Route path="/tic-tac-toe" element={<TicTacToe/>} />
-      <Route path="/tic-tac-toe" element={<TicTacToe/>} />
-      <Route path="*" element={<Thinking />} />
+      <Route path="/thinking" element={<Thinking/>} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   </>
   );
