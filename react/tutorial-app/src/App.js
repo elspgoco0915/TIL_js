@@ -3,6 +3,7 @@ import QuickStart from './pages/quickstart';
 import NotFound from './pages/notfound';
 import TicTacToe from './pages/tic-tac-toe';
 import Thinking from './pages/thinking';
+import FirstComponent from './pages/first-component';
 
 const App = () => {
   return (
@@ -41,6 +42,11 @@ const Router = () => {
           Thinking in React
         </NavLink>
       </li>
+      <li>
+        <NavLink to="/first-component">
+          your first component
+        </NavLink>
+      </li>
     </ul>
     <hr />
     <Routes>
@@ -48,6 +54,7 @@ const Router = () => {
       <Route path="/quickstart" element={<QuickStart />} />
       <Route path="/tic-tac-toe" element={<TicTacToe/>} />
       <Route path="/thinking" element={<Thinking/>} />
+      <Route path="/first-component" element={<FirstComponent/>} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   </>
