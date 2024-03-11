@@ -1,4 +1,5 @@
-import Gallery, { Profile } from "../../components/describing-the-ui/Gallery";
+import Gallery from "../../components/describing-the-ui/Gallery";
+import { Profile } from "../../components/describing-the-ui/Profile";
 
 const MyProfile = () => {
   return (
