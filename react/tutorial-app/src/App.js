@@ -3,7 +3,7 @@ import QuickStart from './pages/quickstart';
 import NotFound from './pages/notfound';
 import TicTacToe from './pages/tic-tac-toe';
 import Thinking from './pages/thinking';
-import FirstComponent from './pages/first-component';
+import FirstComponent from './pages/describing-the-ui/first-component';
 
 const App = () => {
   return (
