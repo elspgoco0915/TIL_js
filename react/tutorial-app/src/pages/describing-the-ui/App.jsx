@@ -2,7 +2,6 @@ import Gallery from "../../components/describing-the-ui/Gallery";
 import { Profile } from "../../components/describing-the-ui/Profile";
 import Todos from "../../components/describing-the-ui/javascript-in-jsx-with-curly-braces/TodoList";
 import TodoList from "../../components/describing-the-ui/Todos";
-import Avatar from "../../components/describing-the-ui/javascript-in-jsx-with-curly-braces/Avatar";
 
 const MyProfile = () => {
   return (
@@ -54,7 +53,6 @@ const JsxWithCurlyBraces = () => {
   )
 }
 
-
 const App = () => {
   return (
     <>
@@ -65,6 +63,8 @@ const App = () => {
       <WritingMarkupWithJsx />
       <hr />
       <JsxWithCurlyBraces />
+      <hr />
+      PassingpropsToComponent
     </>
   );
 }

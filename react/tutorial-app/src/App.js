@@ -3,7 +3,7 @@ import QuickStart from './pages/quickstart';
 import NotFound from './pages/notfound';
 import TicTacToe from './pages/tic-tac-toe';
 import Thinking from './pages/thinking';
-import FirstComponent from './pages/describing-the-ui/first-component';
+import DescribingTheUi from './pages/describing-the-ui/App';
 
 const App = () => {
   return (
@@ -43,8 +43,8 @@ const Router = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink to="/first-component">
-          your first component
+        <NavLink to="/describing-the-ui">
+          describing-the-ui
         </NavLink>
       </li>
     </ul>
@@ -54,7 +54,7 @@ const Router = () => {
       <Route path="/quickstart" element={<QuickStart />} />
       <Route path="/tic-tac-toe" element={<TicTacToe/>} />
       <Route path="/thinking" element={<Thinking/>} />
-      <Route path="/first-component" element={<FirstComponent/>} />
+      <Route path="/describing-the-ui" element={<DescribingTheUi/>} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   </>
