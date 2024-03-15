@@ -1,6 +1,6 @@
 import Gallery from "../../components/describing-the-ui/Gallery";
 import { Profile } from "../../components/describing-the-ui/Profile";
-import TodoList from "../../components/describing-the-ui/TodoList";
+import TodoList from "../../components/describing-the-ui/Todos";
 
 const MyProfile = () => {
   return (
