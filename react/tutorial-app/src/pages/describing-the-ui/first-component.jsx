@@ -1,5 +1,6 @@
 import Gallery from "../../components/describing-the-ui/Gallery";
 import { Profile } from "../../components/describing-the-ui/Profile";
+import TodoList from "../../components/describing-the-ui/TodoList";
 
 const MyProfile = () => {
   return (
@@ -33,12 +34,24 @@ const ImportingAndExportingComponent = () => {
   );
 }
 
+const WritingMarkupWithJsx = () => {
+  return (
+    <>
+    <h1>WritingMarkupWithJsx</h1>
+    <TodoList />
+    </>
+  );
+}
+
+
 const App = () => {
   return (
     <>
       <FirstComponent />
       <hr />
       <ImportingAndExportingComponent />
+      <hr />
+      <WritingMarkupWithJsx />
     </>
   );
 }
