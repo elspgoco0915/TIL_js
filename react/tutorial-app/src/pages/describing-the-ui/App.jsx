@@ -2,6 +2,7 @@ import Gallery from "../../components/describing-the-ui/Gallery";
 import { Profile } from "../../components/describing-the-ui/Profile";
 import Todos from "../../components/describing-the-ui/javascript-in-jsx-with-curly-braces/TodoList";
 import TodoList from "../../components/describing-the-ui/Todos";
+import Icon from "../../components/describing-the-ui/passing-props-to-a-component/App";
 
 const MyProfile = () => {
   return (
@@ -47,10 +48,20 @@ const WritingMarkupWithJsx = () => {
 const JsxWithCurlyBraces = () => {
   return (
     <>
-    <h1>JsxWithCurlyBraces</h1>
-    <Todos />
+      <h1>JsxWithCurlyBraces</h1>
+      <Todos />
     </>
   )
+}
+
+// passing-props-to-a-component
+const PassingpropsToComponent = () => {
+  return(
+    <>
+      <h1>PassingpropsToComponent</h1>
+      <Icon />
+    </>
+  );
 }
 
 const App = () => {
@@ -64,7 +75,7 @@ const App = () => {
       <hr />
       <JsxWithCurlyBraces />
       <hr />
-      PassingpropsToComponent
+      <PassingpropsToComponent />
     </>
   );
 }
