@@ -3,6 +3,7 @@ import { Profile } from "../../components/describing-the-ui/Profile";
 import Todos from "../../components/describing-the-ui/javascript-in-jsx-with-curly-braces/TodoList";
 import TodoList from "../../components/describing-the-ui/Todos";
 import Icon from "../../components/describing-the-ui/passing-props-to-a-component/App";
+import ConditionalRenderingApp from "../../components/describing-the-ui/conditional-rendering/App";
 
 const MyProfile = () => {
   return (
@@ -64,6 +65,17 @@ const PassingpropsToComponent = () => {
   );
 }
 
+// conditional-rendering
+const ConditionalRendering = () => {
+  return (
+    <>
+      <h1>ConditionalRendering</h1>
+      <ConditionalRenderingApp />
+    </>
+  );
+}
+
+
 const App = () => {
   return (
     <>
@@ -76,6 +88,8 @@ const App = () => {
       <JsxWithCurlyBraces />
       <hr />
       <PassingpropsToComponent />
+      <hr />
+      <ConditionalRendering />
     </>
   );
 }
