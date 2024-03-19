@@ -4,6 +4,7 @@ import Todos from "../../components/describing-the-ui/javascript-in-jsx-with-cur
 import TodoList from "../../components/describing-the-ui/Todos";
 import Icon from "../../components/describing-the-ui/passing-props-to-a-component/App";
 import ConditionalRenderingApp from "../../components/describing-the-ui/conditional-rendering/App";
+import RenderingListsApp from "../../components/describing-the-ui/rendering-lists/App";
 
 const MyProfile = () => {
   return (
@@ -75,6 +76,15 @@ const ConditionalRendering = () => {
   );
 }
 
+// rendering-lists
+const RenderingLists = () => {
+  return (
+    <>
+      <h1>RenderingLists</h1>
+      <RenderingListsApp />
+    </>
+  );
+}
 
 const App = () => {
   return (
@@ -90,6 +100,8 @@ const App = () => {
       <PassingpropsToComponent />
       <hr />
       <ConditionalRendering />
+      <hr />
+      <RenderingLists />
     </>
   );
 }
