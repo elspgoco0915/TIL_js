@@ -5,6 +5,7 @@ import TodoList from "../../components/describing-the-ui/Todos";
 import Icon from "../../components/describing-the-ui/passing-props-to-a-component/App";
 import ConditionalRenderingApp from "../../components/describing-the-ui/conditional-rendering/App";
 import RenderingListsApp from "../../components/describing-the-ui/rendering-lists/App";
+import KeepingComponentsPureApp from "../../components/describing-the-ui/keeping-components-pure/App";
 
 const MyProfile = () => {
   return (
@@ -86,6 +87,16 @@ const RenderingLists = () => {
   );
 }
 
+// keeping-components-pure
+const KeepingComponentsPure = () => {
+  return (
+    <>
+      <h1>keeping-components-pure</h1>
+      <KeepingComponentsPureApp />
+    </>
+  )
+}
+
 const App = () => {
   return (
     <>
@@ -102,6 +113,8 @@ const App = () => {
       <ConditionalRendering />
       <hr />
       <RenderingLists />
+      <hr />
+      <KeepingComponentsPure />
     </>
   );
 }
