@@ -4,6 +4,7 @@ import NotFound from './pages/notfound';
 import TicTacToe from './pages/tic-tac-toe';
 import Thinking from './pages/thinking';
 import DescribingTheUi from './pages/describing-the-ui/App';
+import AddingInteractivity from './pages/adding-interactivity/App';
 
 const App = () => {
   return (
@@ -47,6 +48,11 @@ const Router = () => {
           describing-the-ui
         </NavLink>
       </li>
+      <li>
+        <NavLink to="/adding-interactivity">
+          adding-interactivity
+        </NavLink>
+      </li>
     </ul>
     <hr />
     <Routes>
@@ -55,6 +61,7 @@ const Router = () => {
       <Route path="/tic-tac-toe" element={<TicTacToe/>} />
       <Route path="/thinking" element={<Thinking/>} />
       <Route path="/describing-the-ui" element={<DescribingTheUi/>} />
+      <Route path="/adding-interactivity" element={<AddingInteractivity/>} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   </>
