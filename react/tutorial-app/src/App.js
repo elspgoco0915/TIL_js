@@ -5,6 +5,7 @@ import TicTacToe from './pages/tic-tac-toe';
 import Thinking from './pages/thinking';
 import DescribingTheUi from './pages/describing-the-ui/App';
 import AddingInteractivity from './pages/adding-interactivity/App';
+import StateAComponentsMemory from './pages/state-a-components-memory/App';
 
 const App = () => {
   return (
@@ -53,6 +54,11 @@ const Router = () => {
           adding-interactivity
         </NavLink>
       </li>
+      <li>
+        <NavLink to="/state-a-components-memory">
+          state-a-components-memory
+        </NavLink>
+      </li>
     </ul>
     <hr />
     <Routes>
@@ -62,6 +68,7 @@ const Router = () => {
       <Route path="/thinking" element={<Thinking/>} />
       <Route path="/describing-the-ui" element={<DescribingTheUi/>} />
       <Route path="/adding-interactivity" element={<AddingInteractivity/>} />
+      <Route path="/state-a-components-memory" element={<StateAComponentsMemory/>} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   </>
