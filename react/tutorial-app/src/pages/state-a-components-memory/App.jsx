@@ -1,3 +1,4 @@
+import FeedbackForm from '../../components/state-a-components-memory/FeedbackForm';
 import Form from '../../components/state-a-components-memory/Form';
 import Gallery from '../../components/state-a-components-memory/Gallery';
 
@@ -13,7 +14,10 @@ const App = () => {
       <hr />
       <Gallery />
       <h2>チャレンジ問題</h2>
+      <h3>1.</h3>
       <Form />
+      <h3>2.</h3>
+      <FeedbackForm />
     </>
   );
 }
