@@ -1,6 +1,7 @@
 import FeedbackForm from '../../components/state-a-components-memory/FeedbackForm';
 import Form from '../../components/state-a-components-memory/Form';
 import Gallery from '../../components/state-a-components-memory/Gallery';
+import ChallengeForm from '../../components/state-a-components-memory/ChallengeForm';
 
 
 const App = () => {
@@ -13,11 +14,14 @@ const App = () => {
       <Gallery />
       <hr />
       <Gallery />
+      <hr />
       <h2>チャレンジ問題</h2>
       <h3>1.</h3>
       <Form />
       <h3>2.</h3>
       <FeedbackForm />
+      <h3>3.</h3>
+      <ChallengeForm />
     </>
   );
 }
