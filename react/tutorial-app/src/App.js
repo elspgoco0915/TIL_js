@@ -62,7 +62,7 @@ const Router = () => {
       </li>
       <li>
         <NavLink to="/state-as-a-snapshot">
-        state-as-a-snapshot
+        state-as-a-snapshot & queueing-a-series-of-state-updates
         </NavLink>
       </li>
     </ul>
