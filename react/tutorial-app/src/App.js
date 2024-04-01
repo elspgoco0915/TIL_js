@@ -7,6 +7,7 @@ import DescribingTheUi from './pages/describing-the-ui/App';
 import AddingInteractivity from './pages/adding-interactivity/App';
 import StateAComponentsMemory from './pages/state-a-components-memory/App';
 import StateAsASnapshot from './pages/state-as-a-snapshot/App';
+import UpdatingObjectsInState from './pages/updating-objects-in-state/App';
 
 const App = () => {
   return (
@@ -65,6 +66,11 @@ const Router = () => {
         state-as-a-snapshot & queueing-a-series-of-state-updates
         </NavLink>
       </li>
+      <li>
+        <NavLink to="/updating-objects-in-state">
+        updating-objects-in-state
+        </NavLink>
+      </li>
     </ul>
     <hr />
     <Routes>
@@ -76,6 +82,7 @@ const Router = () => {
       <Route path="/adding-interactivity" element={<AddingInteractivity/>} />
       <Route path="/state-a-components-memory" element={<StateAComponentsMemory/>} />
       <Route path="/state-as-a-snapshot" element={<StateAsASnapshot/>} />
+      <Route path="/updating-objects-in-state" element={<UpdatingObjectsInState/>} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   </>
