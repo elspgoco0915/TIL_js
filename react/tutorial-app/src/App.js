@@ -8,6 +8,7 @@ import AddingInteractivity from './pages/adding-interactivity/App';
 import StateAComponentsMemory from './pages/state-a-components-memory/App';
 import StateAsASnapshot from './pages/state-as-a-snapshot/App';
 import UpdatingObjectsInState from './pages/updating-objects-in-state/App';
+import UpdatingArraysInState from './pages/updating-arrays-in-state/App';
 
 const App = () => {
   return (
@@ -71,6 +72,11 @@ const Router = () => {
         updating-objects-in-state
         </NavLink>
       </li>
+      <li>
+        <NavLink to="/updating-arrays-in-state">
+        updating-arrays-in-state
+        </NavLink>
+      </li>
     </ul>
     <hr />
     <Routes>
@@ -83,6 +89,7 @@ const Router = () => {
       <Route path="/state-a-components-memory" element={<StateAComponentsMemory/>} />
       <Route path="/state-as-a-snapshot" element={<StateAsASnapshot/>} />
       <Route path="/updating-objects-in-state" element={<UpdatingObjectsInState/>} />
+      <Route path="/updating-arrays-in-state" element={<UpdatingArraysInState/>} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   </>
