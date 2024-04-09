@@ -245,8 +245,37 @@ const OtherList = () => {
 
 // 配列内のオブジェクトを更新する
 
+const BucketList = () => {
+  let nextId = 3;
+  const initialList = [
+    { id: 0, title: 'Big Bellies', seen: false },
+    { id: 1, title: 'Lunar Landscape', seen: false },
+    { id: 2, title: 'Terracotta Army', seen: true },
+  ];
+  const [myList, setMyList] = useState(initialList);
+  const [yourList, setYourList] = useState(initialList);
+
+  const handleToggleMyList = (artworkId, nextSeen) => {
+    setMyList(myList.map(artwork => {
+      if (artwork.id === artworkId) {
+        return { ...artwork, seen: nextSeen };
+      } else {
+        return artwork;
+      }
+    }));
+  }
+
+  const handleToggleYourList = (artworkId, nextSeen) => {
+      const yourNextList = [...yourlist];
+      const artwork = yourNextList.find(
+        a => a.id === artworkId
+      );
+      artwork.seen = nextSeen;
+      setYourList(yourNextList);
+  }
 
 
+}
 
 
 const Lists = () => {
