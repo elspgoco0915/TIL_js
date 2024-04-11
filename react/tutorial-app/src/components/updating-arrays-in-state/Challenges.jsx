@@ -24,6 +24,20 @@ const ShoppingCart = () => {
     }));
   }
 
+  const handleDecreaseClick = (productId) => {
+    let nextProducts = products.map(product => {
+      if (productId === product.id) {
+          return {...product, count: product.count - 1}
+      } else {
+        return product;
+      }
+    });
+    nextProducts = nextProducts.filter(product => 
+      product.count > 0
+    );
+    setProducts(nextProducts);
+  }
+
   return (
     <ul>
       {products.map(product => (
@@ -35,6 +49,12 @@ const ShoppingCart = () => {
             handleIncreaseClick(product.id);
           }}>
             +
+          </button>
+          {' '}
+          <button onClick={() => {
+            handleDecreaseClick(product.id);
+          }}>
+            –
           </button>
         </li>
       ))}
