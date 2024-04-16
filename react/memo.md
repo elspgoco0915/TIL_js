@@ -39,9 +39,9 @@
   - [ ] hooksを網羅する
     - [React hooksを基礎から理解する (useState編) ](https://qiita.com/seira/items/f063e262b1d57d7e78b4)
     - [axiosを使ってReactでUnsplash APIを叩いてみた](https://qiita.com/kuropp/items/d9758d6ab573b9b53c4b)
-  - [ ] Reactチュートリアルにreact-router-domでアウトプットする
-    - [ja.react.dev](https://ja.react.dev/blog/2023/03/16/introducing-react-dev)
-    - [react-router-domの学習](https://reffect.co.jp/react/react-router-6/)
+  - [x] Reactチュートリアルにreact-router-domでアウトプットする
+    - [ ] [ja.react.dev](https://ja.react.dev/blog/2023/03/16/introducing-react-dev)
+    - [x] [react-router-domの学習](https://reffect.co.jp/react/react-router-6/)
   - りあくとで原理・原則の読み物で理解
 - そのほか
   - [ ] 絶対パス
