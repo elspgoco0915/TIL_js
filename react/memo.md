@@ -1,6 +1,20 @@
-# 目指すべきベストプラクティス
-- 構成関連
-- AtomicDesginの場合
+# 学習タスク
+## ロードマップ
+- [React学習ロードマップ](https://qiita.com/Sicut_study/items/78910cd8d103b8d45a73)
+
+## React基礎理解
+  - [ ] hooksを網羅する
+    - [React hooksを基礎から理解する (useState編) ](https://qiita.com/seira/items/f063e262b1d57d7e78b4)
+    - [axiosを使ってReactでUnsplash APIを叩いてみた](https://qiita.com/kuropp/items/d9758d6ab573b9b53c4b)
+  - [ ] Reactチュートリアルにreact-router-domでアウトプットする
+    - [ja.react.dev](https://ja.react.dev/blog/2023/03/16/introducing-react-dev)
+    - [react-router-domの学習](https://reffect.co.jp/react/react-router-6/)
+  - りあくと！で原理・原則の読み物で理解
+  - LHのreact
+  - [React 入門向けサイト、記事集](https://qiita.com/KNR109/items/d5945897dd67123a87de)
+
+## 構成関連
+### AtomicDesginの場合
   - UI/ロジックの切り分け(presenter / container) 
   - AtomicDesign + MUIのベストプラクティス
     - 全体理解の読み物
@@ -18,7 +32,15 @@
           - [Next.jsで管理画面作成 + AtomicDesign](https://zenn.dev/thirosue/books/13ac92fc34ae22)
         - StoryBook + Hygen(index(presenter/containerファイル), stories, componentファイル )
           - [React/Next.js + AtomicDesignハンズオン(ボイラープレートあり)](https://zenn.dev/hisachii/articles/2544d6ea10033d)
-- MUI
+
+### 脱AtomicDesign
+  - [AtomicDesignやめたディレクトリ構成](https://tech-record.com/post/cG9zdDoyOQ==)
+  - [おすすめディレクトリ構成](https://zenn.dev/a_da_chi/articles/80879f4813ecac#%E3%81%8A%E3%81%99%E3%81%99%E3%82%81%E3%81%AE%E3%83%87%E3%82%A3%E3%83%AC%E3%82%AF%E3%83%88%E3%83%AA%E6%A7%8B%E6%88%90)
+  - [SPA Component](https://zenn.dev/yoshiko/articles/99f8047555f700)
+  - [UIpartsのパターン(bulletproof)](https://zenn.dev/manalink_dev/articles/bulletproof-react-is-best-architecture)
+
+### MUI
+  - [mui getting started](https://mui.com/material-ui/getting-started/usage/)
   - Styledを使う
     - [MUIv5 スタイリング方法](https://qiita.com/cieloazul310/items/d630da98439c89d773ba)
     - [Next.js + MUIのスタイル再定義とアトミックデザインの話](https://note.com/pk_yakkun/n/ne1bc79d699be#a2200f68-8b8c-4e32-b1cc-f1341e2c03b6)
@@ -29,27 +51,18 @@
     - [MUIでGridレイアウト qiita](https://qiita.com/yotsak/items/a638921241a5f0fabe0f)
     - [MUIでGridListコンポーネント hateblo](https://kakakakakku.hatenablog.com/entry/2020/01/13/000227)
   - レイアウト学習のためにTemplatesの写経
-    - [muiアプリテンプレート](https://blog.usize-tech.com/react-free-template/)
-- 脱AtomicDesignの場合
-  - [AtomicDesignやめたディレクトリ構成](https://tech-record.com/post/cG9zdDoyOQ==)
-  - [おすすめディレクトリ構成](https://zenn.dev/a_da_chi/articles/80879f4813ecac#%E3%81%8A%E3%81%99%E3%81%99%E3%82%81%E3%81%AE%E3%83%87%E3%82%A3%E3%83%AC%E3%82%AF%E3%83%88%E3%83%AA%E6%A7%8B%E6%88%90)
-  - [SPA Component](https://zenn.dev/yoshiko/articles/99f8047555f700)
-  - [UIpartsのパターン(bulletproof)](https://zenn.dev/manalink_dev/articles/bulletproof-react-is-best-architecture)
-- React基礎理解
-  - [ ] hooksを網羅する
-    - [React hooksを基礎から理解する (useState編) ](https://qiita.com/seira/items/f063e262b1d57d7e78b4)
-    - [axiosを使ってReactでUnsplash APIを叩いてみた](https://qiita.com/kuropp/items/d9758d6ab573b9b53c4b)
-  - [ ] Reactチュートリアルにreact-router-domでアウトプットする
-    - [ja.react.dev](https://ja.react.dev/blog/2023/03/16/introducing-react-dev)
-    - [react-router-domの学習](https://reffect.co.jp/react/react-router-6/)
-  - りあくとで原理・原則の読み物で理解
-- そのほか
+    - [muiアプリテンプレートの写経](https://blog.usize-tech.com/react-free-template/)
+
+## そのほか
   - [ ] 絶対パス
 - Next.js関連
+  - [Next jsで学ぶReact講座 #1](https://www.youtube.com/playlist?list=PLwM1-TnN_NN6fUhOoZyU4iZiwhLyISopO)
+  - [日本一わかりやすい Next.js 入門 トラハック](https://www.youtube.com/watch?v=f8iXdpbvvH8&pp=ygUP44OI44Op44OP44OD44Kv)
   - [Next.js チュートリアルまとめ](https://zenn.dev/yossyxp/scraps/312e66748bf9aa)
+  - [Next.js + laravel で 2ch](https://zenn.dev/ponta/books/95e0984aa9dcbd/viewer/66749e)
+  - [【忙しい人のための】Next.js公式チュートリアルを完走してきたので記事１本で振り返る](https://dev.classmethod.jp/articles/complete-nextjs-tutorial/)
 - ゆくゆくは抑えたい
   - Jest
-
 
 ---
 
@@ -63,5 +76,4 @@
 ## チュートリアル系
 - [x] [storybook](https://storybook.js.org/tutorials/intro-to-storybook/react/ja/simple-component/)
 - [x] [Netflixのクローンを作るチュートリアル](https://zenn.dev/gunners6518/books/4c4672f32dd100)
-- [React 入門向けサイト、記事集](https://qiita.com/KNR109/items/d5945897dd67123a87de)
 - [React Hooksのみでドラッグ＆ドロップの並び替えを実装する](https://zenn.dev/uttk/articles/b90454baec68c8)
