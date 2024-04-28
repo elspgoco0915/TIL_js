@@ -1,6 +1,7 @@
 import React from 'react';
 import MyButton from './components/MyButton';
 import StudyUseState from './components/StudyUseState';
+import StudyUseEffect from './components/StudyUseEffect';
 
 const App = () => {
   return (
@@ -10,6 +11,7 @@ const App = () => {
       <hr />
       <h2>hooks</h2>
       <StudyUseState />
+      <StudyUseEffect />
     </div>
   );
 }
