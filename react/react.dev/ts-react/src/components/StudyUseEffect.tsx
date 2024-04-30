@@ -29,11 +29,6 @@ const EffectFunc = () => {
     console.log(`再レンダリングされました`);
   }, [count]);
 
-  // TODO: クリーンアップ関数を作成する
-  // @see: https://qiita.com/TaikiTkwkbysh/items/4fc32a3268d958ba218f
-  // useEffect(() => {
-  //   elm.addEventListener()
-  // }, [])
 
 
 
@@ -61,16 +56,47 @@ const EffectFunc = () => {
   );
 }
 
+// クリーンアップ関数を使った場合
+// @see: https://qiita.com/TaikiTkwkbysh/items/4fc32a3268d958ba218f
+const UPDATE_CYCLE: number = 1000;
+const KEY_LOCALE: "KEY_LOCALE" = "KEY_LOCALE";
+
+const Clock = () => {
+  const [timestamps, setTimestamps] = useState<Date>(new Date());
+  const locale = "ja-JP";
+  let counter: number = 0;
+
+  useEffect(() => {
+    const timer = setInterval(() => { 
+      setTimestamps(new Date());
+      counter++;
+      console.log("セットインターバル作動中" + counter);
+    }, UPDATE_CYCLE);
+
+    // クリーンアップ関数
+    return () => {
+      clearInterval(timer);
+    }
+  }, []);
+
+  return (
+    <div>
+      <p>
+        <span id="current-time-label">現在時刻</span>
+        <span>{timestamps.toLocaleString(locale)}</span>
+      </p>
+    </div>
+  );
+}
+
 const StudyUseEffect = () => {
   return (
     <>
       <h3>useEffect</h3>
       <EffectFunc />
+      <Clock />
     </>
   );
 }
-
-// TODO: material-uiがyarnでインストールできないので調べる
-// TODO: その後、次のコンポーネントを作成する
 
 export default StudyUseEffect;
